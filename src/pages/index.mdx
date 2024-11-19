@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/Layout.astro
-title: Academic Project Page Template
-description: Simple project page template for your research paper, built with Astro and Tailwind CSS
+title: Human-Aware Vison-and-Language Navigation
+description: Project page of paper "Human-Aware Vison-and-Language Navigation"
 favicon: favicon.svg
 thumbnail: screenshot.png
 ---
@@ -20,6 +20,7 @@ import LaTeX from "../components/LaTeX.astro";
 
 import outside from "../assets/outside.mp4";
 import transformer from "../assets/transformer.webp";
+import FigScenario from "../assets/task_define_final/task_define_final-1.png";
 import Splat from "../components/Splat.tsx"
 
 import CodeBlock from "../components/CodeBlock.astro";
@@ -28,7 +29,7 @@ export const components = {pre: CodeBlock, table: Table}
 
 <Header
   title={frontmatter.title}
-  authors={[
+  {/* authors={[
     {
       name: "Roman Hauksson",
       url: "https://roman.technology",
@@ -49,9 +50,9 @@ export const components = {pre: CodeBlock, table: Table}
       name: "Author Four",
       institution: "Institution Four",
     },
-  ]}
-  conference="Conference Name"
-  notes={[
+  ]} */}
+  conference="Under Review"
+  {/* notes={[
     {
       symbol: "*",
       text: "author note one",
@@ -60,7 +61,7 @@ export const components = {pre: CodeBlock, table: Table}
       symbol: "†",
       text: "author note two",
     },
-  ]}
+  ]} */}
   links={[
     {
       name: "Paper",
@@ -69,7 +70,7 @@ export const components = {pre: CodeBlock, table: Table}
     },
     {
       name: "Code",
-      url: "https://github.com/RomanHauksson/academic-project-astro-template",
+      url: "",
       icon: "mdi:github",
     },
     {
@@ -86,23 +87,23 @@ export const components = {pre: CodeBlock, table: Table}
 
 ## Abstract
 
-This is a live demo for a template you can use to create a simple project page for your research paper. See the code for the template and instructions on how to use it yourself [here](https://github.com/RomanHauksson/academic-project-astro-template). It's made with the [Astro web framework](https://astro.build/) and styled with [Tailwind CSS](https://tailwindcss.com/). You write the content in [MDX](https://mdxjs.com/), which enables markdown formatting like **bold**, _italics_, and ~strikethrough~, as well as custom components like <SmallCaps>small caps.</SmallCaps>
+Vision-and-Language Navigation (VLN) is crucial for enabling robots to assist humans in everyday environments. However, current VLN systems lack social awareness and rely on simplified instructions with static environments, limiting Sim2Real realizations. To narrow these gaps, we present Human-Aware Vision-and-Language Navigation (HA-VLN), expanding VLN to include both discrete (HA-VLN-DE) and continuous (HA-VLN-CE) environments with social behaviors. The HA-VLN Simulator enables real-time rendering of human activities and provides unified environments for navigation development. It introduces the Human Activity and Pose Simulation (HAPS) Dataset 2.0 with detailed 3D human motion models and the HA Room-to-Room (HA-R2R) Dataset with complex navigation instructions that include human activities. We propose an HA-VLN Vision-and-Language model (HA-VLN-VL) and a Cross-Model Attention model (HA-VLN-CMA) to address visual-language understanding and dynamic decision-making challenges. Comprehensive evaluations and analysis show that dynamic environments with human activities significantly challenge current systems, highlighting the need for specialized human-aware navigation systems for real-world deployment.
 
 </HighlightedSection>
 
 ## Figures
 
-Use the figure component to display images, videos, equations, or any other element, with an optional caption.
+figures
 
 <Figure
-    caption="Diagram of the transformer deep learning architecture."
+    caption="**HA-VLN Navigation Scenario:** An agent navigates environments with dynamic human activities, avoiding collisions by adjusting its path based on instructions and observations. Agent positions (e.g., ①, ②) align with *instructions* related to human movements. Agent decisions (e.g., **A**, **B**) represent actions taken in response to observed activities. For instance, at position ②, Decision **A**, the agent encounters a person on the phone and turns right to avoid collision. **R** **G** **B** and **Depth** observations (right side) show agent views preceding Decisions **A**, **B**, and **C**, capturing the agent's dynamic responses to human actions. *(Zoom in for more details.)*"
   >
-    <Image source={transformer} altText="Diagram of the transformer deep learning architecture." />
+    <Image source={FigScenario} altText="" />
 </Figure>
 
 ## Two columns
 
-Use the two columns component to display two columns of content. In this example, the first column contains a figure with a YouTube video and the second column contains a figure with a custom [React](https://react.dev/) component. By default, they display side by side, but if the screen is narrow enough (for example, on mobile), they're arranged vertically.
+maybe need two columns?
 
 <TwoColumns>
   <Figure slot="left" caption="Take a look at this YouTube video.">
@@ -113,17 +114,7 @@ Use the two columns component to display two columns of content. In this example
   </Figure>
 </TwoColumns>
 
-## Heading levels
-
-Use headings to divide your content into sections.
-
-### Heading 3
-
-Go down a level to heading 3...
-
-#### Heading 4
-
-...and down again to heading 4.
+## Validation on Real-world Robots
 
 ## LaTeX
 
@@ -145,10 +136,5 @@ You can add simple tables using [GitHub Flavored Markdown syntax](https://docs.g
 ## BibTeX citation
 
 ```bibtex
-@misc{roman2024academic,
-  author = "{Roman Hauksson}",
-  title = "Academic Project Page Template",
-  year = "2024",
-  howpublished = "\url{https://research-template.roman.technology}",
-}
+
 ```
