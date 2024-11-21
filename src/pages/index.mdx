@@ -19,6 +19,8 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
 import LaTeX from "../components/LaTeX.astro";
 
 import outside from "../assets/outside.mp4";
+import vidfront from "../assets/8194nk5LbLH_all_ids_video.mp4";
+import visual from "../assets/visualization.mp4";
 import transformer from "../assets/transformer.webp";
 import FigScenario from "../assets/task_define_final/task_define_final-1.png";
 import Splat from "../components/Splat.tsx"
@@ -37,11 +39,7 @@ export const components = {pre: CodeBlock, table: Table}
   conference="Under Review"
   notes={[
     {
-      symbol: "*",
-      text: "",
-    },
-    {
-      symbol: "†",
+      symbol: "",
       text: "",
     },
   ]}
@@ -64,7 +62,7 @@ export const components = {pre: CodeBlock, table: Table}
   ]}
   />
 
-<Video source={outside} />
+<Video source={vidfront} />
 
 <HighlightedSection>
 
@@ -76,7 +74,7 @@ Vision-and-Language Navigation (VLN) is crucial for enabling robots to assist hu
 
 ## Figures
 
-figures
+HA-VLN Navigation Scenario
 
 <Figure
     caption="**HA-VLN Navigation Scenario:** An agent navigates environments with dynamic human activities, avoiding collisions by adjusting its path based on instructions and observations. Agent positions (e.g., ①, ②) align with *instructions* related to human movements. Agent decisions (e.g., **A**, **B**) represent actions taken in response to observed activities. For instance, at position ②, Decision **A**, the agent encounters a person on the phone and turns right to avoid collision. **R** **G** **B** and **Depth** observations (right side) show agent views preceding Decisions **A**, **B**, and **C**, capturing the agent's dynamic responses to human actions. *(Zoom in for more details.)*"
@@ -84,37 +82,20 @@ figures
     <Image source={FigScenario} altText="" />
 </Figure>
 
-## Two columns
+## Visualization
 
-maybe need two columns?
 
-<TwoColumns>
-  <Figure slot="left" caption="Take a look at this YouTube video.">
-    <YouTubeVideo videoId="wjZofJX0v4M" />
-  </Figure>
-  <Figure slot="right" caption="Now look at this Gaussian Splat, rendered with a React component.">
-    <Splat client:idle />
-  </Figure>
-</TwoColumns>
+<Figure  
+    caption="Visualization results of agent's trajectory"
+  >
+    <Video source={visual} altText="" />
+</Figure>
+
+## Dataset
+
+[Download Here!](https://www.dropbox.com/scl/fo/6ofhh9vw5h21is38ahhgc/AOutW4EK3higqNOrX2hQ8rk?rlkey=v88np78ugr49z3sqisnvo6a9i&st=xogu3trq&dl=0)
 
 ## Validation on Real-world Robots
-
-## LaTeX
-
-You can also add LaTeX formulas, rendered during the build process using [KaTeX](https://katex.org/) so they're quick to load for visitors of your project page. You can write them inline, like this: <LaTeX inline formula="a^2 + b^2 = c^2" />. Or, you can write them as a block:
-
-<LaTeX formula="\int_a^b f(x) dx" />
-
-## Tables
-
-You can add simple tables using [GitHub Flavored Markdown syntax](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables):
-
-| Model | Accuracy | F1 score | Training time (hours) |
-| :--- | :---: | :---: | :---: |
-| BERT-base | 0.89 | 0.87 | 4.5 |
-| RoBERTa-large | 0.92 | 0.91 | 7.2 |
-| DistilBERT | 0.86 | 0.84 | 2.1 |
-| XLNet | 0.90 | 0.89 | 6.8 |
 
 ## BibTeX citation
 
