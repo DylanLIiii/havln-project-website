@@ -19,10 +19,11 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
 import LaTeX from "../components/LaTeX.astro";
 
 import outside from "../assets/outside.mp4";
-import vidfront from "../assets/8194nk5LbLH_all_ids_video.mp4";
+import vidfront from "../assets/havln.mp4";
 import visual from "../assets/visualization.mp4";
 import transformer from "../assets/transformer.webp";
 import FigScenario from "../assets/task_define_final/task_define_final-1.png";
+import FigOverview from "../assets/overview_example-1.png";
 import Splat from "../components/Splat.tsx"
 
 import CodeBlock from "../components/CodeBlock.astro";
@@ -53,6 +54,12 @@ export const components = {pre: CodeBlock, table: Table}
   />
 
 <Video source={vidfront} />
+
+<Figure
+    caption="We present several annotated instances of human subjects from the proposed HAPS 2.0 Dataset, showcasing a variety of well-aligned motions, movements, and interactions"
+  >
+    <Image source={FigOverview} altText="" />
+</Figure>
 
 <HighlightedSection>
 
