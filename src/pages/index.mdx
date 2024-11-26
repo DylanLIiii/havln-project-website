@@ -23,6 +23,7 @@ import vidfront from "../assets/havln.mp4";
 import visual from "../assets/visualization.mp4";
 import transformer from "../assets/transformer.webp";
 import FigScenario from "../assets/task_define_final/task_define_final-1.png";
+import FigSim from "../assets/simulator_draft_v2/simulator_draft_v2-1.png";
 import FigOverview from "../assets/overview_example-1.png";
 import Splat from "../components/Splat.tsx"
 
@@ -53,6 +54,14 @@ export const components = {pre: CodeBlock, table: Table}
   ]}
   />
 
+HA-VLN Navigation Scenario
+
+<Figure
+    caption="**HA-VLN Navigation Scenario:** An agent navigates environments with dynamic human activities, avoiding collisions by adjusting its path based on instructions and observations. Agent positions (e.g., ①, ②) align with *instructions* related to human movements. Agent decisions (e.g., **A**, **B**) represent actions taken in response to observed activities. For instance, at position ②, Decision **A**, the agent encounters a person on the phone and turns right to avoid collision. **R** **G** **B** and **Depth** observations (right side) show agent views preceding Decisions **A**, **B**, and **C**, capturing the agent's dynamic responses to human actions. *(Zoom in for more details.)*"
+  >
+    <Image source={FigScenario} altText="" />
+</Figure>
+
 <Video source={vidfront} />
 
 <Figure
@@ -71,12 +80,12 @@ Vision-and-Language Navigation (VLN) is crucial for enabling robots to assist hu
 
 ## Figures
 
-HA-VLN Navigation Scenario
+HA-VLN-CE Simulator
 
 <Figure
-    caption="**HA-VLN Navigation Scenario:** An agent navigates environments with dynamic human activities, avoiding collisions by adjusting its path based on instructions and observations. Agent positions (e.g., ①, ②) align with *instructions* related to human movements. Agent decisions (e.g., **A**, **B**) represent actions taken in response to observed activities. For instance, at position ②, Decision **A**, the agent encounters a person on the phone and turns right to avoid collision. **R** **G** **B** and **Depth** observations (right side) show agent views preceding Decisions **A**, **B**, and **C**, capturing the agent's dynamic responses to human actions. *(Zoom in for more details.)*"
+    caption="HA-VLN-CE simulator incorporates dynamic human activities into photorealistic Habitat environments. The annotation process includes: 1). integrating the HAPS 2.0 dataset with 172 activities and 486 detailed 3D motion models across 58,320 frames; 2). a two-stage annotation—Stage 1: coarse-to-fine using PSO algorithm and multi-view cameras, and Stage 2: human-in-the-loop for enhancing multi-human interactions and movements; 3). real-time rendering using a signaling mechanism; and 4). enabling agent-environment interactions."
   >
-    <Image source={FigScenario} altText="" />
+    <Image source={FigSim} altText="" />
 </Figure>
 
 ## Visualization
